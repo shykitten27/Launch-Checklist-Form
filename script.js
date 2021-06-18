@@ -18,16 +18,16 @@ window.addEventListener("load", function() {
       console.log(copilotNameInput.value);   
       console.log(fuelLevelInput.value);
       console.log(cargoMassInput.value);         
-      // //isNaN equates to is not a number, ergo it is NOT a number when TRUE 
-      // if (isNaN(pilotNameInput.value) || 
-      //     isNan(copilotNameInput.value) ) {
-      //    alert("Pilot and Co-Pilot names must not be numeric!");
-      // } 
-      // //!isNaN equates to is NOT not a number, ergo it IS a number when TRUE
-      // if (!isNaN(fuelLevelInput.value) || 
-      //     !isNan(cargoMassInput.value) ) {
-      //    alert("Fuel level and cargo mass must be numeric!");
-      // }          
+      //true if the given value is NOT NaN 
+      if (!isNaN(pilotNameInput.value) || 
+          !isNan(copilotNameInput.value) ) {
+         alert("Pilot and Co-Pilot names must not be numeric!");
+      } 
+      //true if the given value is NaN
+      if (isNaN(fuelLevelInput.value) || 
+          isNan(cargoMassInput.value) ) {
+         alert("Fuel level and cargo mass must be numeric!");
+      }          
    });
 });
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
