@@ -25,18 +25,18 @@ window.addEventListener("load", function() {
          alert("All fields are required!");
          event.preventDefault();
       } 
-      //isNaN equates to is not a number, ergo it is NOT a number when TRUE 
-      if (isNaN(pilotNameInput.value) || 
-          isNan(copilotNameInput.value) ) {
-         alert("Pilot and Co-Pilot names must not be numeric!");
-         event.preventDefault();
-      } 
-      //!isNaN equates to is NOT not a number, ergo it IS a number when TRUE
-      if (!isNaN(fuelLevelInput.value) || 
-          !isNan(cargoMassInput.value) ) {
-         alert("Fuel level and cargo mass must be numeric!");
-         event.preventDefault();
-      }          
+      // //isNaN equates to is not a number, ergo it is NOT a number when TRUE 
+      // if (isNaN(pilotNameInput.value) || 
+      //     isNan(copilotNameInput.value) ) {
+      //    alert("Pilot and Co-Pilot names must not be numeric!");
+      //    event.preventDefault();
+      // } 
+      // //!isNaN equates to is NOT not a number, ergo it IS a number when TRUE
+      // if (!isNaN(fuelLevelInput.value) || 
+      //     !isNan(cargoMassInput.value) ) {
+      //    alert("Fuel level and cargo mass must be numeric!");
+      //    event.preventDefault();
+      // }          
    });
 });
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
