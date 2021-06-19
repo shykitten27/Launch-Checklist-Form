@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
-   //move json fetch
+   //fetch randomly here - BONUS to use math.random for index
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
       // Access the JSON in the response
       response.json().then( function(json) {
