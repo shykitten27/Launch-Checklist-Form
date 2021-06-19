@@ -60,7 +60,9 @@ window.addEventListener("load", function() {
                 launchStatus = "Shuttle not ready for launch";
                 document.getElementById("launchStatus").style.color = 'red';
       }else{
-      //combine if statements and when all true, 
+      //combine if statements and when all true...
+               launchStatus = "Shuttle is ready for launch";
+               document.getElementById("launchStatus").style.color = 'green';
                let faultyItems = document.getElementById("faultyItems");
                faultyItems.style.visibility="visible"; 
       }
