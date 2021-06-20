@@ -53,13 +53,13 @@ window.addEventListener("load", function() {
       //           alert("Fuel level and cargo mass must be numeric!");
 
       }else if (fuelLevelInput.value < 10000) {
-                fuelStatus = "Not enough fuel for the journey.";
+                fuelStatus.innerHTML = "Not enough fuel for the journey.";
                 launchStatus.innerHTML = "Shuttle not ready for launch";
                 launchStatus.style.color = 'red';
                 faultyItems.style.visibility="visible";  
 
       }else if (cargoMassInput.value > 10000) {
-                cargoMassInput = "Too much mass for the shuttle to take off.";
+                cargoMassInput.innerHTML = "Too much mass for the shuttle to take off.";
                 launchStatus.innerHTML = "Shuttle not ready for launch";
                 launchStatus.style.color = 'red';
                 faultyItems.style.visibility="visible"; 
