@@ -4,6 +4,7 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
       // Access the JSON in the response
       response.json().then( function(json) {
+        console.log(`${json.length}`);
         const div = document.getElementById('missionTarget');
         div.innerHTML = `
         <h2>Mission Destination</h2>
@@ -32,38 +33,40 @@ window.addEventListener("load", function() {
       let pilotStatus = document.getElementById("pilotStatus");
       let copilotStatus = document.getElementById("copilotStatus");
       let fuelStatus = document.getElementById("fuelStatus");
-      let pilotStatus = document.getElementById("cargoStatus");      
- 
+      let cargoStatus = document.getElementById("cargoStatus"); 
+      let faultyItems = document.getElementById("faultyItems");     
+    
       if (pilotNameInput.value   === "" || 
           copilotNameInput.value === "" ||
           fuelLevelInput.value   === "" ||
           cargoMassInput.value   === "") {
           alert("All fields are required!");
 
-         //true if the given value is NOT NaN 
-      }else if (!isNaN(pilotNameInput.value) || 
-                !isNan(copilotNameInput.value) ) {
-                alert("Pilot and Co-Pilot names must not be numeric!"); 
+      //    //true if the given value is NOT NaN 
+      // }else if (!isNaN(pilotNameInput.value) || 
+      //           !isNan(copilotNameInput.value) ) {
+      //           alert("Pilot and Co-Pilot names must not be numeric!"); 
 
          //true if the given value is NaN
-      }else if (isNaN(fuelLevelInput.value) || 
-                isNan(cargoMassInput.value) ) {
-                alert("Fuel level and cargo mass must be numeric!");
+      // }else if (isNaN(fuelLevelInput.value) || 
+      //           isNan(cargoMassInput.value) ) {
+      //           alert("Fuel level and cargo mass must be numeric!");
 
       }else if (fuelLevelInput.value < 10000) {
-                fuelLevelInput = "Not enough fuel for the journey.";
-                launchStatus = "Shuttle not ready for launch";
-                document.getElementById("launchStatus").style.color = 'red';
+                fuelStatus = "Not enough fuel for the journey.";
+                launchStatus.innerHTML = "Shuttle not ready for launch";
+                launchStatus.style.color = 'red';
+                faultyItems.style.visibility="visible";  
 
       }else if (cargoMassInput.value > 10000) {
                 cargoMassInput = "Too much mass for the shuttle to take off.";
-                launchStatus = "Shuttle not ready for launch";
-                document.getElementById("launchStatus").style.color = 'red';
+                launchStatus.innerHTML = "Shuttle not ready for launch";
+                launchStatus.style.color = 'red';
+                faultyItems.style.visibility="visible"; 
       }else{
       //combine if statements and when all true...
-               launchStatus = "Shuttle is ready for launch";
-               document.getElementById("launchStatus").style.color = 'green';
-               let faultyItems = document.getElementById("faultyItems");
+               launchStatus.innerHTML = "Shuttle is ready for launch."
+               launchStatus.style.color = 'green';
                faultyItems.style.visibility="visible"; 
       }
    });
