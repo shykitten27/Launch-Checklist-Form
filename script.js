@@ -34,7 +34,12 @@ window.addEventListener("load", function() {
       let fuelStatus = document.getElementById("fuelStatus");
       let cargoStatus = document.getElementById("cargoStatus"); 
       let faultyItems = document.getElementById("faultyItems");     
-    
+
+      console.log(pilotNameInput.value);
+      console.log(copilotNameInput.value);
+      console.log(fuelLevelInput.value);
+      console.log(cargoMassInput.value);
+
       if (pilotNameInput.value   === "" || 
           copilotNameInput.value === "" ||
           fuelLevelInput.value   === "" ||
@@ -43,12 +48,12 @@ window.addEventListener("load", function() {
 
          //true if the given value is NOT NaN 
       }else if (!isNaN(pilotNameInput.value) || 
-                !isNan(copilotNameInput.value) ) {
+                !isNaN(copilotNameInput.value) ) {
                 alert("Pilot and Co-Pilot names must not be numeric!"); 
 
          //true if the given value is NaN
       }else if (isNaN(fuelLevelInput.value) || 
-                isNan(cargoMassInput.value) ) {
+                isNaN(cargoMassInput.value) ) {
                 alert("Fuel level and cargo mass must be numeric!");
 
       }else if (fuelLevelInput.value < 10000) {
