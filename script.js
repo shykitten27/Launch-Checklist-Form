@@ -4,7 +4,6 @@ window.addEventListener("load", function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
       // Access the JSON in the response
       response.json().then( function(json) {
-        console.log(`${json.length}`);
         const div = document.getElementById("missionTarget");
         div.innerHTML = `
         <h2>Mission Destination</h2>
@@ -53,13 +52,13 @@ window.addEventListener("load", function() {
       //           alert("Fuel level and cargo mass must be numeric!");
 
       }else if (fuelLevelInput.value < 10000) {
-                fuelStatus.innerHTML = "Not enough fuel for the journey.";
+                fuelStatus.innerHTML = "Not enough fuel for the journey";
                 launchStatus.innerHTML = "Shuttle not ready for launch";
                 launchStatus.style.color = 'red';
                 faultyItems.style.visibility="visible";  
 
       }else if (cargoMassInput.value > 10000) {
-                cargoStatus.innerHTML = "Too much mass for the shuttle to take off.";
+                cargoStatus.innerHTML = "Too much mass for the shuttle to take off";
                 launchStatus.innerHTML = "Shuttle not ready for launch";
                 launchStatus.style.color = 'red';
                 faultyItems.style.visibility="visible"; 
@@ -68,6 +67,9 @@ window.addEventListener("load", function() {
                launchStatus.innerHTML = "Shuttle is ready for launch."
                launchStatus.style.color = 'green';
                faultyItems.style.visibility="visible"; 
+               //adding this in case user corrects errors and status messages need to be reset
+               fuelStatus.innerHTML = "Fuel level high enough for launch";
+               cargoStatus.innerHTML = "Cargo mass low enough for launch";
       }
    });
 });
