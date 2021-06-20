@@ -41,15 +41,15 @@ window.addEventListener("load", function() {
           cargoMassInput.value   === "") {
           alert("All fields are required!");
 
-      //    //true if the given value is NOT NaN 
-      // }else if (!isNaN(pilotNameInput.value) || 
-      //           !isNan(copilotNameInput.value) ) {
-      //           alert("Pilot and Co-Pilot names must not be numeric!"); 
+         //true if the given value is NOT NaN 
+      }else if (!isNaN(pilotNameInput.value) || 
+                !isNan(copilotNameInput.value) ) {
+                alert("Pilot and Co-Pilot names must not be numeric!"); 
 
          //true if the given value is NaN
-      // }else if (isNaN(fuelLevelInput.value) || 
-      //           isNan(cargoMassInput.value) ) {
-      //           alert("Fuel level and cargo mass must be numeric!");
+      }else if (isNaN(fuelLevelInput.value) || 
+                isNan(cargoMassInput.value) ) {
+                alert("Fuel level and cargo mass must be numeric!");
 
       }else if (fuelLevelInput.value < 10000) {
                 fuelStatus.innerHTML = "Not enough fuel for the journey";
