@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
       // Access the JSON in the response
       response.json().then( function(json) {
         console.log(`${json.length}`);
-        const div = document.getElementById('missionTarget');
+        const div = document.getElementById("missionTarget");
         div.innerHTML = `
         <h2>Mission Destination</h2>
         <ol>
